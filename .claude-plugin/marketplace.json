@@ -1,0 +1,15 @@
+{
+  "name": "4d-senses-marketplace",
+  "description": "4D Senses — push-based quality awareness for Claude Code",
+  "plugins": [
+    {
+      "name": "4d-senses",
+      "version": "1.0.0",
+      "description": "Push-based quality awareness for Claude Code — code smell detection, failure tracking, personal memory matching, and auto-fire media perception.",
+      "source": {
+        "type": "local",
+        "path": ".."
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "4d-senses",
+  "version": "1.0.0",
+  "description": "Push-based quality awareness for Claude Code — code smell detection, failure tracking, personal memory matching, and auto-fire media perception. Local-first, no cloud required.",
+  "author": {
+    "name": "Alex Hale"
+  },
+  "homepage": "https://github.com/7alexhale5-rgb/4d-senses",
+  "repository": "https://github.com/7alexhale5-rgb/4d-senses",
+  "license": "MIT",
+  "keywords": ["perception", "quality", "hooks", "code-smell", "video", "transcription", "senses"],
+  "commands": [
+    {
+      "name": "senses-status",
+      "description": "Show active senses, recent pain history, and alert summary",
+      "file": "commands/senses-status.md"
+    }
+  ]
+}
