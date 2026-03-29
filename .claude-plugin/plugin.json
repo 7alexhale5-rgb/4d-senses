@@ -9,11 +9,5 @@
   "repository": "https://github.com/7alexhale5-rgb/4d-senses",
   "license": "MIT",
   "keywords": ["perception", "quality", "hooks", "code-smell", "video", "transcription", "senses"],
-  "commands": [
-    {
-      "name": "senses-status",
-      "description": "Show active senses, recent pain history, and alert summary",
-      "file": "commands/senses-status.md"
-    }
-  ]
+  "commands": "./commands"
 }
