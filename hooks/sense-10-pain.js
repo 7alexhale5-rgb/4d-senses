@@ -25,6 +25,15 @@ const toolName = hookData.tool_name || '';
 const toolInput = hookData.tool_input || {};
 const toolResponse = hookData.tool_response || {};
 
+// Wave 1 (refactored 2026-04-15 post-audit): shared skip-path predicate.
+// Asymmetry vs sense-8/15: sense-10 (pain) does NOT skip test files —
+// repeated test failures are real pain signals and worth tracking.
+// Bash events always fire (they may reference non-file state).
+if (['Edit', 'Write'].includes(toolName)) {
+  const { shouldSkipPath } = require('./lib/skip-paths');
+  if (shouldSkipPath(toolInput.file_path || '', { skipTests: false })) process.exit(0);
+}
+
 // Convert tool_response to string for pattern matching
 const toolResultStr = typeof toolResponse === 'string'
   ? toolResponse

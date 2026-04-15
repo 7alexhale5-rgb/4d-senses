@@ -29,6 +29,14 @@ const toolInput = hookData.tool_input || {};
 // Only fire on code-modifying operations
 if (!['Edit', 'Write', 'Bash'].includes(toolName)) process.exit(0);
 
+// Wave 1 (refactored 2026-04-15 post-audit): shared skip-path predicate.
+// sense-15 skips test files — feedback-memory patterns rarely apply to test
+// scaffolding (tests intentionally contain edge cases that look "risky").
+if (['Edit', 'Write'].includes(toolName)) {
+  const { shouldSkipPath } = require('./lib/skip-paths');
+  if (shouldSkipPath(toolInput.file_path || '', { skipTests: true })) process.exit(0);
+}
+
 // --- Derive paths portably (no hardcoded usernames) ---
 
 // Feedback memory: resolve per-project based on cwd reported by the hook

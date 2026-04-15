@@ -43,6 +43,11 @@ if (!codeExts.includes(ext)) process.exit(0);
 if (filePath.includes('/skills/') && filePath.endsWith('SKILL.md')) process.exit(0);
 if (filePath.includes('/memory/')) process.exit(0);
 
+// Wave 1 (refactored 2026-04-15 post-audit): shared skip-path predicate.
+// sense-8 skips test files — god-file/duplication metrics don't apply to fixtures.
+const { shouldSkipPath } = require('./lib/skip-paths');
+if (shouldSkipPath(filePath, { skipTests: true })) process.exit(0);
+
 let content;
 try {
   content = fs.readFileSync(filePath, 'utf-8');

@@ -1,4 +1,5 @@
 {
+  "_wave1_note": "Path-based skip filters (test files, node_modules, dist, .next, .turbo, coverage, build, __pycache__) live INSIDE sense-8-smell.js, sense-10-pain.js, sense-15-intuition.js as early-exit checks — NOT as if: filters here. Search for 'Wave 1' in those files. Rationale in memory-vault/sessions/2026-04-15-routines-wave1-shipped.md",
   "hooks": {
     "PostToolUse": [
       {
