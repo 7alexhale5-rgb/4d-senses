@@ -2,6 +2,23 @@
 
 This plugin gives Claude Code a nervous system — automatic quality signals that fire on every tool use without explicit invocation.
 
+## Where to go
+
+| Task                                             | Go to                                          | Read                          | Skills                  |
+| ------------------------------------------------ | ---------------------------------------------- | ----------------------------- | ----------------------- |
+| Add or tune a sense (smell/pain/intuition)       | [hooks/CONTEXT.md](hooks/CONTEXT.md)           | `hooks/hooks.json`            | —                       |
+| Change how video/audio/photo gets routed         | [references/CONTEXT.md](references/CONTEXT.md) | `references/media-routing.md` | 4d-senses:senses-status |
+| Touch `watch-video.py` or `transcribe-gemini.py` | [scripts/CONTEXT.md](scripts/CONTEXT.md)       | `scripts/*.py`                | —                       |
+| Change or add a slash command                    | [commands/CONTEXT.md](commands/CONTEXT.md)     | `commands/senses-status.md`   | —                       |
+
+Root files that stay put: `CLAUDE.md`/`AGENTS.md` (router), `README.md`, `LICENSE`,
+`.claude-plugin/` (plugin manifest, tooling path).
+
+## Naming
+
+Hooks: `sense-<N>-<name>.js` for a sense, `<name>.py` for a perception script; slash commands
+live in `commands/` as `<name>.md`.
+
 ## Active Senses
 
 | Sense | Event | Matcher | What It Detects |
