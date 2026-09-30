@@ -22,7 +22,9 @@
 ## Outputs
 
 - Transcript/analysis text to stdout, or to `--output path.md` when given for transcription.
-- No data leaves the machine (per root `CLAUDE.md` "Data Storage").
+- Results are stored locally. Enabled Gemini video analysis uploads the video;
+  Gemini transcription uploads audio. Groq transcription sends extracted audio.
+  These provider calls transmit media off this machine; local storage is a separate rule.
 
 ## Human check
 
